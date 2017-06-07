@@ -25,6 +25,16 @@ COMMON_PATH := device/motorola/msm8610-common
 
 BOARD_VENDOR := motorola-qcom
 
+# Use CM Ramdisk
+TARGET_USE_CM_RAMDISK := true
+
+# Setting TARGET_HAVE_HDMI_OUT to false
+# to get rid of compilation error.
+TARGET_HAVE_HDMI_OUT := false
+
+# Power
+TARGET_PROVIDES_POWERHAL := true
+
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno302
 TARGET_BOARD_PLATFORM := msm8610
@@ -47,7 +57,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 vmalloc=400M
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.bootdevice=msm_sdcc.1 vmalloc=400M androidboot.selinux=permissive
 LZMA_RAMDISK_TARGETS := recovery
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
@@ -103,7 +113,6 @@ MALLOC_SVELTE := true
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
-TARGET_RIL_VARIANT := caf
 
 # Recovery
 TARGET_RECOVERY_DENSITY := hdpi
@@ -125,6 +134,7 @@ BOARD_VOLD_MAX_PARTITIONS := 40
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Wifi
+BOARD_HAS_QCOM_WLAN-CAF := true
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn

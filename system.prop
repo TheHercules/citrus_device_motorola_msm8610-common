@@ -99,3 +99,6 @@ ro.usb.bpteth_adb=0x2e2b
 # Wifi
 persist.sys.qc.sub.rdump.on=1
 ro.disableWifiApFirmwareReload=true
+
+# Model
+ro.product.model=Mote E
