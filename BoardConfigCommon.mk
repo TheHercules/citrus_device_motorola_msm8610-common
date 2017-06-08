@@ -28,10 +28,6 @@ BOARD_VENDOR := motorola-qcom
 # Use CM Ramdisk
 TARGET_USE_CM_RAMDISK := true
 
-# Setting TARGET_HAVE_HDMI_OUT to false
-# to get rid of compilation error.
-TARGET_HAVE_HDMI_OUT := false
-
 # Power
 TARGET_PROVIDES_POWERHAL := true
 
@@ -134,7 +130,6 @@ BOARD_VOLD_MAX_PARTITIONS := 40
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 
 # Wifi
-BOARD_HAS_QCOM_WLAN-CAF := true
 BOARD_HAS_QCOM_WLAN := true
 BOARD_HAS_QCOM_WLAN_SDK := true
 BOARD_WLAN_DEVICE := qcwcn
