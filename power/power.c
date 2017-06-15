@@ -200,7 +200,12 @@ static void power_hint(__attribute__((unused)) struct power_module *module,
             }
         }
         break;
-    case POWER_HINT_LOW_POWER:
+        case POWER_HINT_POWER_PROFILE:
+         pthread_mutex_lock(&lock);
+         set_power_profile(*(int32_t *)data);
+         pthread_mutex_unlock(&lock);
+         break;
+        case POWER_HINT_LOW_POWER:
         /* This hint is handled by the framework */
         break;
     default:
